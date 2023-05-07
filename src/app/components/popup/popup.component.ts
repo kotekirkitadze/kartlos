@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Inject, OnInit } from '@angular/core';
+import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
 
 @Component({
   selector: 'app-popup',
@@ -6,13 +7,12 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./popup.component.scss'],
 })
 export class PopupComponent {
-  visible = false;
+  constructor(
+    public dialogRef: MatDialogRef<PopupComponent>,
+    @Inject(MAT_DIALOG_DATA) public data: any
+  ) {}
 
-  open() {
-    this.visible = true;
-  }
-
-  close() {
-    this.visible = false;
+  onNoClick(): void {
+    this.dialogRef.close();
   }
 }

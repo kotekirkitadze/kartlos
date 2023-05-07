@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable, map } from 'rxjs';
+import { MatDialog } from '@angular/material/dialog';
+import { PopupComponent } from '../popup/popup.component';
 
 @Component({
   selector: 'app-products',
@@ -9,8 +11,8 @@ import { Observable, map } from 'rxjs';
 })
 export class ProductsComponent implements OnInit {
   products$: Observable<any> | undefined;
-  showPopup = false;
-  constructor(private http: HttpClient) {}
+
+  constructor(private http: HttpClient, private dialog: MatDialog) {}
 
   ngOnInit(): void {
     this.products$ = this.http
@@ -29,6 +31,17 @@ export class ProductsComponent implements OnInit {
 
   buyHandler(_: any, product: any) {
     console.log('buy', product);
-    this.showPopup = true;
+    this.openDialog();
+  }
+
+  openDialog(): void {
+    const dialogRef = this.dialog.open(PopupComponent, {
+      data: { name: 'test' },
+    });
+    console.log(dialogRef, 'Da');
+
+    dialogRef.afterClosed().subscribe((result) => {
+      console.log('The dialog was closed');
+    });
   }
 }
