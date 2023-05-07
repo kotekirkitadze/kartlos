@@ -2,5 +2,8 @@
   <app-product
     *ngFor="let product of products$ | async"
     [product]="product"
+    (onBuy)="buyHandler($event, product)"
   ></app-product>
 </section>
+
+<app-popup *ngIf="showPopup"></app-popup>

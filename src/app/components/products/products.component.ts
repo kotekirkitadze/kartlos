@@ -9,6 +9,7 @@ import { Observable, map } from 'rxjs';
 })
 export class ProductsComponent implements OnInit {
   products$: Observable<any> | undefined;
+  showPopup = false;
   constructor(private http: HttpClient) {}
 
   ngOnInit(): void {
@@ -24,5 +25,10 @@ export class ProductsComponent implements OnInit {
           })
         )
       );
+  }
+
+  buyHandler(_: any, product: any) {
+    console.log('buy', product);
+    this.showPopup = true;
   }
 }
