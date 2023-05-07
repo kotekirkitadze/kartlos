@@ -1,1 +1,9 @@
 /* You can add global styles to this file, and also import other style files */
+body {
+  background-color: #143b88;
+  background-image: url("assets/background.png");
+  z-index: 1;
+  background-size: cover;
+  background-position: center center;
+  background-attachment: fixed;
+}
