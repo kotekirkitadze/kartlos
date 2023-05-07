@@ -1,26 +1,28 @@
-<div class="product__side product__side--front">
-  <img
-    class="product__picture product__picture--1"
-    [src]="product?.attachments[0].url"
-    alt="product image"
-  />
+<ng-container *ngIf="product"
+  ><div class="product__side product__side--front">
+    <img
+      class="product__picture product__picture--1"
+      [src]="product.attachments[0].url"
+      alt="product image"
+    />
 
-  <h4 class="product__heading">
-    <span class="product__heading-span product__heading-span--1">
-      {{ product.nameGeo }}
-    </span>
-  </h4>
-  <div class="product__details">
-    <ul>
-      <li *ngFor="let des of product.descriptionGeo">• {{ des }}</li>
-    </ul>
-  </div>
-</div>
-<div class="product__side product__side--back product__side--back-1">
-  <div class="product__cta">
-    <div class="product__price-box">
-      <p class="product__price-value">{{ product.price + "₾" }}</p>
+    <h4 class="product__heading">
+      <span class="product__heading-span product__heading-span--1">
+        {{ product.nameGeo }}
+      </span>
+    </h4>
+    <div class="product__details">
+      <ul>
+        <li *ngFor="let des of product.descriptionGeo">• {{ des }}</li>
+      </ul>
     </div>
-    <button (click)="buy()" class="btn btn--white">ყიდვა</button>
   </div>
-</div>
+  <div class="product__side product__side--back product__side--back-1">
+    <div class="product__cta">
+      <div class="product__price-box">
+        <p class="product__price-value">{{ product.price + "₾" }}</p>
+      </div>
+      <button (click)="buy()" class="btn btn--white">ყიდვა</button>
+    </div>
+  </div>
+</ng-container>
