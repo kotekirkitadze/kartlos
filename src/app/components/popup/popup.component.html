@@ -1,6 +1,36 @@
-<h1 mat-dialog-title>Hi</h1>
+<h1 mat-dialog-title>შეკვეთა</h1>
 <div mat-dialog-content>
-  <p>ბერო შე ყლეო</p>
+  <form [formGroup]="form">
+    <mat-form-field appearance="outline">
+      <mat-label>სახელი</mat-label>
+      <input formControlName="name" matInput placeholder="სახელი" />
+    </mat-form-field>
+    <mat-form-field appearance="outline">
+      <mat-label>გვარი</mat-label>
+      <input formControlName="lastName" matInput placeholder="გვარი" />
+    </mat-form-field>
+    <mat-form-field appearance="outline">
+      <mat-label>მისამართი</mat-label>
+      <input formControlName="address" matInput placeholder="მისამართი" />
+    </mat-form-field>
+    <mat-form-field appearance="outline">
+      <mat-label>ქალაქი</mat-label>
+      <input formControlName="city" matInput placeholder="ქალაქი" />
+    </mat-form-field>
+    <mat-form-field appearance="outline">
+      <mat-label>ნომერი</mat-label>
+      <input formControlName="phone" matInput placeholder="ნომერი" />
+    </mat-form-field>
+    <mat-form-field appearance="outline">
+      <mat-label>ელ-ფოსტა</mat-label>
+      <input
+        formControlName="email"
+        type="email"
+        matInput
+        placeholder="ელ-ფოსტა"
+      />
+    </mat-form-field>
+  </form>
 </div>
 <div mat-dialog-actions>
   <button mat-button (click)="onNoClick()">ბერო ყლეა</button>

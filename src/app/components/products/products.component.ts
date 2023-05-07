@@ -37,6 +37,7 @@ export class ProductsComponent implements OnInit {
   openDialog(): void {
     const dialogRef = this.dialog.open(PopupComponent, {
       data: { name: 'test' },
+      width: '500px',
     });
     console.log(dialogRef, 'Da');
 
