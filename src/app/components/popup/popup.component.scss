@@ -1,11 +1,16 @@
 h1 {
   text-align: center;
-  padding: 1rem;
 }
 form {
   display: flex;
   flex-direction: column;
+  padding-top: 0.2rem;
 }
 mat-dialog-content {
-  padding: 1rem;
+  padding: 0.5rem 0;
+}
+
+.mat-dialog-actions {
+  padding-bottom: 0.5rem;
+  justify-content: center;
 }

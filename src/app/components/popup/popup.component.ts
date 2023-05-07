@@ -1,4 +1,4 @@
-import { Component, Inject, OnInit } from '@angular/core';
+import { Component, Inject } from '@angular/core';
 import { FormBuilder, Validators } from '@angular/forms';
 import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
 
@@ -20,11 +20,7 @@ export class PopupComponent {
     public dialogRef: MatDialogRef<PopupComponent>,
     @Inject(MAT_DIALOG_DATA) public data: any,
     private fb: FormBuilder
-  ) {
-    setTimeout(() => {
-      this.form.valueChanges.subscribe(console.log);
-    }, 300);
-  }
+  ) {}
 
   onNoClick(): void {
     this.dialogRef.close();

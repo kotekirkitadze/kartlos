@@ -32,9 +32,13 @@
     </mat-form-field>
   </form>
 </div>
-<div mat-dialog-actions>
-  <button mat-button (click)="onNoClick()">ბერო ყლეა</button>
-  <button mat-button [mat-dialog-close]="data.animal" cdkFocusInitial>
-    კი, ბერო უფრო ყლეა
+<div mat-dialog-actions class="mat-dialog-actions">
+  <button mat-button (click)="onNoClick()">შეკვეთის გაუქმება</button>
+  <button
+    mat-button
+    [mat-dialog-close]="{ formValue: form.value, productId: data.id }"
+    cdkFocusInitial
+  >
+    ყიდვა
   </button>
 </div>
