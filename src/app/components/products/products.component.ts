@@ -31,17 +31,17 @@ export class ProductsComponent implements OnInit {
 
   buyHandler(_: any, product: any) {
     console.log('buy', product);
-    this.openDialog();
+    this.openDialog(product.id);
   }
 
-  openDialog(): void {
+  openDialog(id: number): void {
     const dialogRef = this.dialog.open(PopupComponent, {
-      data: { name: 'test' },
+      data: { id },
+      width: '600px',
     });
-    console.log(dialogRef, 'Da');
 
     dialogRef.afterClosed().subscribe((result) => {
-      console.log('The dialog was closed');
+      console.log('The dialog was closed', result);
     });
   }
 }

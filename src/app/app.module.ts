@@ -10,6 +10,9 @@ import { HttpClientModule } from '@angular/common/http';
 import { PopupComponent } from './components/popup/popup.component';
 import { MatDialogModule } from '@angular/material/dialog';
 import { MatFormFieldModule } from '@angular/material/form-field';
+import { ReactiveFormsModule } from '@angular/forms';
+import { MatInputModule } from '@angular/material/input';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
   declarations: [
@@ -25,6 +28,9 @@ import { MatFormFieldModule } from '@angular/material/form-field';
     MatDialogModule,
     MatFormFieldModule,
     MatButtonModule,
+    ReactiveFormsModule,
+    MatInputModule,
+    BrowserAnimationsModule,
   ],
   providers: [],
   bootstrap: [AppComponent],
