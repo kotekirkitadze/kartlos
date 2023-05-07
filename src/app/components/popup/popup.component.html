@@ -4,22 +4,27 @@
     <mat-form-field appearance="outline">
       <mat-label>სახელი</mat-label>
       <input formControlName="name" matInput placeholder="სახელი" />
+      <mat-error>გთხოვთ შეიყვანოთ სახელი</mat-error>
     </mat-form-field>
     <mat-form-field appearance="outline">
       <mat-label>გვარი</mat-label>
       <input formControlName="lastName" matInput placeholder="გვარი" />
+      <mat-error>გთხოვთ შეიყვანოთ გვარი</mat-error>
     </mat-form-field>
     <mat-form-field appearance="outline">
       <mat-label>მისამართი</mat-label>
       <input formControlName="address" matInput placeholder="მისამართი" />
+      <mat-error>გთხოვთ შეიყვანოთ მისამართი</mat-error>
     </mat-form-field>
     <mat-form-field appearance="outline">
       <mat-label>ქალაქი</mat-label>
       <input formControlName="city" matInput placeholder="ქალაქი" />
+      <mat-error>გთხოვთ შეიყვანოთ ქალაქი</mat-error>
     </mat-form-field>
     <mat-form-field appearance="outline">
       <mat-label>ნომერი</mat-label>
       <input formControlName="phone" matInput placeholder="ნომერი" />
+      <mat-error>გთხოვთ შეიყვანოთ ნომერი</mat-error>
     </mat-form-field>
     <mat-form-field appearance="outline">
       <mat-label>ელ-ფოსტა</mat-label>
@@ -29,13 +34,16 @@
         matInput
         placeholder="ელ-ფოსტა"
       />
+      <mat-error>გთხოვთ შეიყვანოთ იმეილი</mat-error>
     </mat-form-field>
   </form>
 </div>
 <div mat-dialog-actions class="mat-dialog-actions">
-  <button mat-button (click)="onNoClick()">შეკვეთის გაუქმება</button>
+  <button mat-raised-button (click)="onNoClick()">შეკვეთის გაუქმება</button>
   <button
-    mat-button
+    [disabled]="form.invalid"
+    color="accent"
+    mat-raised-button
     [mat-dialog-close]="{ formValue: form.value, productId: data.id }"
     cdkFocusInitial
   >
